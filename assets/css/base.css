@@ -1,0 +1,26 @@
+:root {
+    --white--color: #fff;
+    --black--color: #000;
+    --text--color: #333;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+html {
+    font-size: 62.5%;
+    /* line-height: 1.6rem; */
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(247, 247, 247);
+}
+@keyframes fadein{
+    from {
+opacity: 0;
+    }
+    to {
+Opacity: 1;
+    }
+} 

@@ -1,0 +1,254 @@
+/* body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+} */
+/* #main {
+    height: 100vh;
+    width: 100vw;
+} */
+.header {
+    height: 46px;
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+.nav-item {
+    display: inline-block;
+}
+.nav-item:hover {
+    background-color: rgb(212, 211, 211);
+}
+.nav-item:hover .nav-link {
+    color: black;
+    cursor: pointer;
+}
+.nav-link {
+    display: block;
+    color: white;
+    font-size: 1.6rem;
+    line-height: 46px;
+    min-width: 120px;
+    text-align: center;
+    padding: 0 20px;
+}
+.nav-more {
+    position: relative;
+}
+.nav-more:hover .nav-more-container {
+    display: block;
+}
+.nav-more-container {
+    position: absolute;
+    display: none;
+    background-color: rgb(230, 228, 228);
+    min-width: 150px;
+}
+.nav-more-item {
+    display: block;
+}
+.nav-more-link {
+    color: black;
+    font-size: 1.6rem;
+    line-height: 40px;
+    padding-left: 20px;
+}
+.nav-btn {
+    background-color: unset;
+    border: none;
+    line-height: 46px;
+    width: 60px;
+} 
+.nav-btn:hover {
+    background-color: rgb(230, 228, 228);
+    cursor: pointer;
+}
+.nav-btn:hover .search-btn {
+    color: black;
+}
+.search-btn {
+    color: white;
+    font-size: 1.6rem;
+    display: block;
+}
+.slider {
+    position: relative;
+    margin-top: 46px;
+    padding-top: 50%;
+    background-position: top center;
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-image: url(https://www.w3schools.com/w3images/chicago.jpg);
+} 
+.slider-des {
+    display: block;
+    position: absolute;
+    color: white;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 5%;
+}
+.content {
+    align-items:center;
+    text-align: center;
+    justify-content: center;
+    padding: 50px 0;
+
+}
+.container-intro {
+
+}
+.title {
+    margin-top: 50px;
+}
+.paragraph {
+    text-align: justify;
+    margin-top: 15px;
+    font-size: 1.3rem;
+}
+.member-list {
+    /* display: flex;
+    justify-content: center; */
+}
+.member {
+    padding: 12px;
+}
+.container-black {
+    background-color: black;
+    color: white;
+    padding: 100px 0;
+}
+.container-booking {
+    text-align: center;
+}
+.booking-header {
+    margin: 20px 0;
+}
+.booking-table {
+    background-color: white;
+    background-clip: content-box;
+
+    color: black;
+    text-align: left;
+}
+.booking-row {
+    padding-left: 20px;
+    line-height: 30px;
+    font-size: 1.6rem;
+    border-bottom: 1px solid black;
+}
+.booking-row span {
+    background-color: red;
+    color: white;
+    padding: 2px 4px;
+    margin-left: 20px;
+}
+.place {
+
+}
+.place-item {
+    background-color: white;
+    background-clip: content-box;
+    color: black;
+    margin: 20px 0;
+    padding: 12px;
+}
+.place-item img {
+    box-sizing: border-box;
+    object-fit: cover;
+    width: 100%;
+    height: 180px;
+}
+.place-des h2 {
+    font-weight: 300;
+    padding: 10px 0;
+}
+.place-des p {
+    text-align: justify;
+    padding: 20px 0;
+    font-size: 1.4rem;
+}
+.place-des button {
+    line-height: 40px;
+    width: 100px;
+    color: white;
+    background-color: black;
+    font-size: 1.2rem;
+    border: none;
+    margin-bottom: 10px;
+} 
+.place-des {
+    padding: 0 10px;
+}
+.contact {
+    padding: 50px 0;
+}
+.contact-header {
+    text-align: center;
+    margin: 20px 0;
+
+}
+.contact-method {
+    margin: 20px 0;
+
+}
+.contact-address {
+    font-size: 1.6rem;
+
+}
+.contact-address ul li {
+    margin: 10px 0;
+    text-align: left;
+}
+.contact-form {
+    font-size: 1.6rem;
+    /* display: block; */
+    /* display: flex; */
+    /* flex-direction: column; */
+}
+.contact-form div {
+
+}
+.contact-form div input{
+    float: left;
+    width: 50%;
+
+}
+.contact-form div input, input {
+    line-height: 35px;
+    margin: 10px 0;
+    padding: 0 10px;
+}
+.form-message {
+    width: 100%;
+}
+.form-submit {
+    width: 71px;
+    float: right;
+}
+.map img {
+    width: 100%;
+}
+#footer {
+    text-align: center;
+    padding: 50px 0;
+}
+.footer-icon ul {
+     display: flex;
+     justify-content: center;
+     font-size: 2rem;
+     margin: 40px 0 20px 0;
+}
+.footer-icon ul li{
+    margin: 0 10px;
+}
+#footer p {
+    font-size: 1.6rem;
+    margin: 20px 0 40px 0;
+}
