@@ -9,6 +9,7 @@ var aboutTexts = document.querySelectorAll('.about-text')
 var aboutTextVis = document.querySelector('.about-text.active')
 var overlayVideo = document.querySelector('.overlay-modal')
 var playVideo = document.querySelector('.play-icon')
+var video = document.querySelector('.video-popup video')
 // xử lý slidbar trượt bên trái qua
 navIcon.addEventListener('click', function() {
     slidebar.style.right = '0'
@@ -22,15 +23,15 @@ close.addEventListener('click', function() {
 //     slidebar.style.right = '-350px'
 //     overlay.style.display = 'none'
 // })
-overlay.onclick = function() {
+overlay.onclick = function() {  
     slidebar.style.right = '-350px'
     overlay.style.display = 'none'
 }
 playVideo.onclick = function() {
-    overlayVideo.style.display = 'block'
+    overlayVideo.classList.add('show');
 }
-overlayVideo.onclick = function() {
-    overlayVideo.style.display = 'none'
+overlayVideo.onclick = function() {     
+    overlayVideo.classList.remove('show')
 }
 //xử lý nút nhấn chuyển trang ok
 navBtns.forEach(function(navBtn, index) {
