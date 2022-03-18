@@ -1,0 +1,93 @@
+
+
+@media (max-width: 740px) {
+    .container-nav {
+        height: 70px;
+    }
+    .nav {
+        height: 70px;
+        margin: 0 30px;
+        display: flex;
+        justify-content: space-between;
+        &-icon {
+            i {
+                border: none;
+                &:hover {
+                    cursor: pointer;
+                    background-color: unset;
+                    background-clip: content-box;
+                    color: $primary-light;
+                }
+            }
+        }
+    }
+    .intro-img {
+        margin-top: 20px;
+    }
+    .container-intro {
+        padding: 60px 0 20px 0;
+    }
+    .about .about-content {
+        padding: 0;
+        nav {
+            padding: 15px 25px;
+            button {
+                display: block;
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+    }
+
+}
+/* >= Tablet */
+@media (min-width: 740px) and (max-width: 1113px) {
+    
+    .container-nav {
+        height: 70px;
+    }
+    .nav {
+        height: 70px;
+        margin: 0 30px;
+        display: flex;
+        justify-content: space-between;
+        &-icon {
+            i {
+                border: none;
+                &:hover {
+                    cursor: pointer;
+                    background-color: unset;
+                    background-clip: content-box;
+                    color: $primary-light;
+                }
+            }
+        }
+    }
+    .intro-img {
+        margin-top: 30px;
+    }
+    .container-intro {
+        padding: 80px 0 30px 0;
+    }
+    .about .about-content {
+        padding: 0;
+      
+    }
+
+}
+
+/* PC medium resolution > */
+@media (min-width: 1113px) {
+  
+
+}
+/* wide là css khoảng thừa 2 bên khi ở màn hình tablet hoặc hớn hơn, nếu ko có thì ko có khoảng thừa */
+
+/* Tablet - PC low resolution */
+// @media (min-width: 740px) and (max-width: 1023px) {
+
+// }
+
+// /* > PC low resolution */
+// @media (min-width: 1024px) and (max-width: 1400px) {
+// }
