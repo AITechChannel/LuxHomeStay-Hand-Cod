@@ -10,6 +10,7 @@ var aboutTextVis = document.querySelector('.about-text.active')
 var overlayVideo = document.querySelector('.overlay-modal')
 var playVideo = document.querySelector('.play-icon')
 var video = document.querySelector('.video-popup video')
+
 // xử lý slidbar trượt bên trái qua
 navIcon.addEventListener('click', function() {
     slidebar.style.right = '0'
@@ -19,10 +20,7 @@ close.addEventListener('click', function() {
     slidebar.style.right = '-350px'
     overlay.style.display = 'none'
 })
-// overlay.addEventListener('click', function() {
-//     slidebar.style.right = '-350px'
-//     overlay.style.display = 'none'
-// })
+// Show media video play
 overlay.onclick = function() {  
     slidebar.style.right = '-350px'
     overlay.style.display = 'none'
@@ -45,4 +43,41 @@ navBtns.forEach(function(navBtn, index) {
         aboutTextVis.classList.remove('active')
         aboutText.classList.add('active')
     }
+})
+// Xử lý hover vào thẻ tag work
+var imgWorks = document.querySelectorAll('.img-box')
+var overlayImg =document.querySelectorAll('.overlay-img')
+imgWorks.forEach(function(imgWork) {
+    imgWork.addEventListener('mouseover', function() {
+        // console.log(imgWork)
+        imgWork.querySelector('.overlay-img').classList.add('visible')
+    })
+    
+    imgWork.addEventListener('mouseout', function() {
+        imgWork.querySelector('.overlay-img').classList.remove('visible')    
+    })
+})
+//Xử lý phân nhóm từng thẻ tab mỗi nội dung riêng biệt
+var tabWork = document.querySelectorAll('.tab')
+tabWork.forEach(function(tab){
+    tab.onclick = function(e) {
+        let tagSelect = document.querySelector('.tab.select')
+        tagSelect.classList.remove('select')
+        this.classList.add('select')
+        let workTags = document.querySelectorAll('.work-tags')
+        workTags.forEach(function(tag){
+            tag.classList.remove('show')
+            console.log(tab)
+            console.log(tag)
+            if (tab.getAttribute('group') =='work' && tag.getAttribute('group') == 'work') {        
+                tag.classList.add('show')
+            } if (tab.getAttribute('group') =='brand' && tag.getAttribute('group') == 'brand') {        
+                tag.classList.add('show')
+            } if (tab.getAttribute('group') =='marketing' && tag.getAttribute('group') == 'marketing') {        
+                tag.classList.add('show')
+            } 
+
+        })
+    }
+    
 })
