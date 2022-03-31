@@ -115,9 +115,18 @@ var sliderItem = document.querySelectorAll('.testimonial')
 var slidebox = document.querySelector('.testimonials-box')
 var sliderItemWidth = sliderItem[0].offsetWidth;
 var sliderLength = sliderItem.length;
+
+var tnsBtn = document.querySelectorAll('.tns-nav .btn')
+
 setInterval (autoSlide, 2000)
 var i = 1;
 function autoSlide() {
+
+    for (var a = 0; a < tnsBtn.length; a++) {
+            tnsBtn[a].classList.remove('active')
+            tnsBtn[i].classList.add('active')
+    }
+
     if (i == 0) {
         sliderItem[1].style = "left:595px;z-index:3";
         
@@ -131,13 +140,16 @@ function autoSlide() {
 
       } else if (i == 1) {
           
-        sliderItem[0].style = "left:-595px;z-index:3";
+        sliderItem[0].style = "left:-595px;z-index:-2";
         
         sliderItem[1].style = "left:0;z-index:3";
         
         sliderItem[2].style = "left:595px;z-index:3";
 
         sliderItem[3].style = "left: 1190px;z-index:-2";
+
+        sliderItem[sliderLength-1].style = "left: 1190px;z-index:-2";
+
 
         i++;
 
@@ -146,7 +158,7 @@ function autoSlide() {
           
         sliderItem[i - 2].style = "left: 1190px;z-index:-2";
 
-        sliderItem[i - 1].style = "left:-595px;z-index:3";
+        sliderItem[i - 1].style = "left:-595px;z-index:-2";
         
         sliderItem[i].style = "left: 0;z-index:3";
         
