@@ -1,22 +1,26 @@
 
-
+// Mobile
 @media (max-width: 768px) {
     .container-nav {
         height: 70px;
-    }
-    .nav {
-        height: 70px;
-        margin: 0 30px;
-        display: flex;
-        justify-content: space-between;
-        &-icon {
-            i {
-                border: none;
-                &:hover {
-                    cursor: pointer;
-                    background-color: unset;
-                    background-clip: content-box;
-                    color: $primary-light;
+        .row {
+            .col {
+                .nav {
+                    height: 70px;
+                    margin: 0;
+                    display: flex;
+                    justify-content: space-between;
+                    &-icon {
+                        i {
+                            border: none;
+                            &:hover {
+                                cursor: pointer;
+                                background-color: unset;
+                                background-clip: content-box;
+                                color: $primary-light;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -69,8 +73,23 @@
 
         }
     }
+    .scroll-page {
+        padding-top: 55px;
+    }
+    .team-container {
+        .team {
+            .member {
+                padding-top: 80px;
+            }
+            .member:first-child {
+                padding-top: 0;
+            }
+        }
+    }
 
 }
+
+
 /* >= Tablet */
 @media (min-width: 768px) and (max-width: 993px) {
     
@@ -80,8 +99,6 @@
             .col {
                 .nav {
                     height: 70px;
-            
-            
                     margin: 0;
                     display: flex;
                     justify-content: space-between;
@@ -135,20 +152,21 @@
 
         }
     }
+    .scroll-page {
+        padding-top: 55px;
+    }
+    .team-container {
+        .team {
+            .member:last-child {
+                padding-top: 80px;
+            }
+        }
+    }
 }
 
-/* PC medium resolution > */
+/* >= PC */
 @media (min-width: 993px) {
-  
-
+.scroll-page {
+    padding-top: 100px;
+}  
 }
-/* wide là css khoảng thừa 2 bên khi ở màn hình tablet hoặc hớn hơn, nếu ko có thì ko có khoảng thừa */
-
-/* Tablet - PC low resolution */
-// @media (min-width: 740px) and (max-width: 1023px) {
-
-// }
-
-// /* > PC low resolution */
-// @media (min-width: 1024px) and (max-width: 1400px) {
-// }

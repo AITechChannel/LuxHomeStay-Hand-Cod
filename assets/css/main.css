@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .container-nav {
   background-color: #155bd5;
   height: 94px;
@@ -1075,6 +1074,14 @@ footer .addition-container .subscribe .email-send i:hover {
   cursor: pointer;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+#page_1 {
+  padding-top: 0;
+}
+
 .grid {
   width: 100%;
   display: block;
@@ -1518,9 +1525,6 @@ footer .addition-container .subscribe .email-send i:hover {
     margin-left: 91.66667%;
   }
 }
-/* wide là css khoảng thừa 2 bên khi ở màn hình tablet hoặc hớn hơn, nếu ko có thì ko có khoảng thừa */
-/* Tablet - PC low resolution */
-/* > PC low resolution */
 @media (min-width: 992px) and (max-width: 1200px) {
   .wide {
     width: 912px;
@@ -1577,17 +1581,16 @@ footer .addition-container .subscribe .email-send i:hover {
   .container-nav {
     height: 70px;
   }
-
-  .nav {
+  .container-nav .row .col .nav {
     height: 70px;
-    margin: 0 30px;
+    margin: 0;
     display: flex;
     justify-content: space-between;
   }
-  .nav-icon i {
+  .container-nav .row .col .nav-icon i {
     border: none;
   }
-  .nav-icon i:hover {
+  .container-nav .row .col .nav-icon i:hover {
     cursor: pointer;
     background-color: unset;
     background-clip: content-box;
@@ -1633,6 +1636,17 @@ footer .addition-container .subscribe .email-send i:hover {
 
   .works-container .works .tab-container .tab button {
     width: 110px;
+  }
+
+  .scroll-page {
+    padding-top: 55px;
+  }
+
+  .team-container .team .member {
+    padding-top: 80px;
+  }
+  .team-container .team .member:first-child {
+    padding-top: 0;
   }
 }
 /* >= Tablet */
@@ -1682,9 +1696,20 @@ footer .addition-container .subscribe .email-send i:hover {
   .works-container .works .tab-container .tab button {
     width: 110px;
   }
+
+  .scroll-page {
+    padding-top: 55px;
+  }
+
+  .team-container .team .member:last-child {
+    padding-top: 80px;
+  }
 }
-/* PC medium resolution > */
-/* wide là css khoảng thừa 2 bên khi ở màn hình tablet hoặc hớn hơn, nếu ko có thì ko có khoảng thừa */
-/* Tablet - PC low resolution */
+/* >= PC */
+@media (min-width: 993px) {
+  .scroll-page {
+    padding-top: 100px;
+  }
+}
 
 /*# sourceMappingURL=main.css.map */

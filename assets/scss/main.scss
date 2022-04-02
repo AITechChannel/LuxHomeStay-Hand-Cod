@@ -1222,13 +1222,14 @@ footer {
         }
     }
 }
+//------------scroll-page----------------------
+html {
+    scroll-behavior: smooth;
+}
 
-
-
-
-
-
-
+#page_1 {
+    padding-top: 0;
+}
 
 
 

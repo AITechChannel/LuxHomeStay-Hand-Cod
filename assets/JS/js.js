@@ -13,6 +13,7 @@ var playVideo = document.querySelector('.play-icon')
 var video = document.querySelector('.video-popup video')
 
 // xử lý slidbar trượt bên trái qua
+
 const pc = window.matchMedia("(min-width: 993px)");
 pc.addListener(handleDeviceChange);
 function handleDeviceChange(e) {
@@ -44,6 +45,7 @@ handleDeviceChange(pc)
 
 
 // Show media video play
+
 overlay.onclick = function() {  
     slidebar.style.right = '-350px'
     overlay.style.display = 'none'
@@ -57,6 +59,7 @@ overlayVideo.onclick = function() {
 
 
 //xử lý nút nhấn chuyển trang ok
+
 navBtns.forEach(function(navBtn, index) {
     navBtn.onclick = function() {
         aboutText = aboutTexts[index]
@@ -72,6 +75,7 @@ navBtns.forEach(function(navBtn, index) {
 
 
 // Xử lý hover vào thẻ tag work
+
 var imgWorks = document.querySelectorAll('.img-box')
 var overlayImg =document.querySelectorAll('.overlay-img')
 imgWorks.forEach(function(imgWork) {
@@ -87,6 +91,7 @@ imgWorks.forEach(function(imgWork) {
 
 
 //Xử lý phân nhóm từng thẻ tab mỗi nội dung riêng biệt
+
 var tabWork = document.querySelectorAll('.tab')
 tabWork.forEach(function(tab){
     tab.onclick = function(e) {
@@ -111,6 +116,7 @@ tabWork.forEach(function(tab){
 
 
 //---------------Auto slider------------------
+
 var sliderItem = document.querySelectorAll('.testimonial')
 var slidebox = document.querySelector('.testimonials-box')
 var sliderItemWidth = sliderItem[0].offsetWidth;
@@ -181,8 +187,9 @@ function autoSlide() {
     
       }
 }
-// -------------hieght box parent position: relative
 
+
+// -------------height box parent position: relative
 
 var testimonialBox = document.querySelector('.testimonials-box')
 function boxHeight() {
@@ -193,6 +200,7 @@ boxHeight()
 
 
 // --------------google map API --------------------
+
 function initMap() {
     const bachkhoa = { lat: 16.07238682707813, lng: 108.15357676086444 }; 
     const map = new google.maps.Map(document.getElementById("map"), 
