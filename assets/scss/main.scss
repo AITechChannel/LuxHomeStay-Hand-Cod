@@ -4,6 +4,10 @@ body {
 header {
     background-color: #fafafa;
     font-size: 2.4rem;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 99;
     .navbar {
         height: 100px;
         display: flex;
@@ -58,8 +62,9 @@ header {
 
 .banner {
     position: relative;
+    padding: 120px 0 0 0;
     .banner-left {
-        margin-right: 40px;
+        margin: 4px 40px 40px 0;
         h6 {
             font-size: 1.8rem;
             color: #fe3f40;
@@ -75,35 +80,40 @@ header {
             font-size: 1.5rem;
             margin: 20px 0;
         }
+        .banner-input {
+            position: relative;
+            display: flex; 
+            width: 70%;
+            align-items: center;
+            input {
+                font-size: 1.5rem;
+                background-color: #03a4ed;
+                height: 66px;
+                border-radius: 33px;
+                width: 100%;
+                border: none;
+                padding: 0 170px 0 30px;
+                outline: none;
+                caret-color: #fafafa;
+            }
+            input::placeholder {
+                color:#fafafa;
+                
+            }
+            button {
+                font-size: 1.5rem;
+                position: absolute;
+                padding: 12px 25px;
+                border-radius: 30px;
+                right: 10px;
+                border: none;
+            }
+        }
     }
-    .banner-input {
-        position: relative;
-        display: flex; 
-        width: 70%;
-        align-items: center;
-        input {
-            font-size: 1.5rem;
-            background-color: #03a4ed;
-            height: 66px;
-            border-radius: 33px;
-            width: 100%;
-            border: none;
-            padding: 0 170px 0 30px;
-            outline: none;
-            caret-color: #fafafa;
-        }
-        input::placeholder {
-            color:#fafafa;
-            
-        }
-        button {
-            font-size: 1.5rem;
-            position: absolute;
-            padding: 12px 25px;
-            border-radius: 30px;
-            right: 10px;
-            border: none;
-        }
+    .banner-right {
+        margin: 40px 0;
+
+
     }
 }
 .img-left {
@@ -117,8 +127,9 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
     padding: 140px 0px 120px 0px;
+    // z-index: -1;
     .container {
-        .row {
+        .row {  
             align-items: center;
                 .about-right {
                     display: flex;
@@ -342,6 +353,106 @@ header {
     }
 }
 
+.message {
+    background-image: url(../images/contact-bg.png);
+    padding: 110px 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .container {
+        .message-left {
+            color: #fff;
+            h2 {
+                margin-bottom: 40px;
+            }
+            p {
+                margin-bottom: 40px;
+
+            }
+            .message-call {
+                display: flex;
+                align-items: center;
+                span {
+                    display: flex;
+                    align-items: center;
+                    font-size: 1.5rem;
+                    i {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 40px; height: 40px;
+                        background-color: #fff;
+                        border-radius: 25px;
+                        color: #fe3f40;
+                        margin-right: 8px;
+                    }
+                }
+                h4 {
+                    margin-right: 20px;
+                }
+            }
+        }
+        .form {
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 25px;
+            input {
+                height: 50px;
+                border: none;
+                border-radius: 25px;
+                padding: 0 20px;
+                font-size: 1.5rem;
+                outline: none;
+                margin-bottom: 20px;
+                background-color: #d1f3ff;
+            }
+            .full-name {
+                display: flex;
+                input {
+                    flex: 1;
+                }
+                input:first-child {
+                    margin-right: 20px;
+                }
+
+            }
+            textarea {
+                border-radius: 25px;
+                margin-bottom: 20px;
+                width: none;
+                resize: vertical;
+                background-color: #d1f3ff;
+                outline: none;
+                border: 2px solid #d1f3ff;
+
+
+                &:focus {
+                    border: 2px solid #99e4ff;
+                }
+            }
+            button {
+                padding: 10px 20px;
+                background-color: #03a4ed;
+                color: #fff;
+                align-self: flex-start;
+                height: 40px;
+                border-radius: 20px;
+                border: none;
+                font-size: 1.5rem;
+            }
+
+        }
+    }
+}
+
+footer {
+    .footer-content {
+        text-align: center;
+        margin: 40px 0;
+    }
+}
 
 
 @import "./base.scss";
+@import "./reponsive.scss";

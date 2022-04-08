@@ -1,172 +1,79 @@
 
-// Mobile
-@media (max-width: 768px) {
-    .container-nav {
-        height: 70px;
-        .row {
-            .col {
-                .nav {
-                    height: 70px;
-                    margin: 0;
-                    display: flex;
-                    justify-content: space-between;
-                    &-icon {
-                        i {
-                            border: none;
-                            &:hover {
-                                cursor: pointer;
-                                background-color: unset;
-                                background-clip: content-box;
-                                color: $primary-light;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    .intro-img {
-        margin-top: 20px;
-    }
-    .container-intro {
-        padding: 60px 0 20px 0;
-    }
-    .about .about-content {
-        padding: 0;
-        nav {
-            padding: 15px 25px;
-            button {
-                display: block;
+// Extral Small
+@media (max-width: 576px) {
+
+
+}
+
+
+//Small
+@media (min-width: 576px) and (max-width: 720px){
+    .banner {
+        .banner-left {
+            margin-right: 0;
+            text-align: center;
+            .banner-input {
                 width: 100%;
-                margin: 10px 0;
             }
         }
-    }
-    .clients-container {
-        .clients-row1, .clients-row2 {
-            margin-left: 0;
-            .col {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                img {
-                    align-self: center;
-                    margin-right: 0;
-                    margin-bottom: 20px;
-                }
-                img:nth-child(3) {
-                    margin-bottom: 0;
-                }
-            }
+        .banner-right {
+            text-align: center;
         }
     }
-    .works-container {
-        .works {
-            .tab-container {
-                .tab {
-                    button {
-                        width: 110px;
-                    }
-                } 
-
-            }
-
-        }
-    }
-    .scroll-page {
-        padding-top: 55px;
-    }
-    .team-container {
-        .team {
-            .member {
-                padding-top: 80px;
-            }
-            .member:first-child {
-                padding-top: 0;
-            }
-        }
-    }
-
 }
-
-
-/* >= Tablet */
-@media (min-width: 768px) and (max-width: 993px) {
     
-    .container-nav {
-        height: 70px;
-        .row {
-            .col {
-                .nav {
-                    height: 70px;
-                    margin: 0;
-                    display: flex;
-                    justify-content: space-between;
-                    &-icon {
-                        i {
-                            border: none;
-                            &:hover {
-                                cursor: pointer;
-                                background-color: unset;
-                                background-clip: content-box;
-                                color: $primary-light;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    .intro-img {
-        margin-top: 30px;
-    }
-    .container-intro {
-        padding: 80px 0 30px 0;
-    }
-    .about .about-content {
-        padding: 0;
-      
-    }
-    .clients-container {
-        .clients-row1, .clients-row2 {
-            margin-left: 0;
-            .col {
-                display: flex;
-                justify-content: center;
-                img {
-                    margin-right: 10px;
-                }
-            }
-        }
-    }
-    .works-container {
-        .works {
-            .tab-container {
-                .tab {
-                    button {
-                        width: 110px;
-                    }
-                } 
 
+//Medium
+@media (min-width: 720px) and (max-width: 960px){
+    .banner {
+        .banner-left {
+            margin-right: 0;
+            text-align: center;
+            .banner-input {
+                width: 100%;
             }
-
+        }
+        .banner-right {
+            text-align: center;
         }
     }
-    .scroll-page {
-        padding-top: 55px;
-    }
-    .team-container {
-        .team {
-            .member:last-child {
-                padding-top: 80px;
+    .about {
+        position: relative;
+        padding: 80px  0 150px 0;
+        .container {
+            .about-left {
+                position: absolute;
+                right: 0;
+                bottom: -150px;
+                z-index: 1
+            }
+            .about-right {
+                z-index: 2;
+                position: relative;
             }
         }
     }
 }
+//large
+@media (min-width: 960px) and (max-width: 1140px){
+    .banner {
+        .banner-left {
+            margin-right: 0;
+            text-align: center;
+            .banner-input {
+                width: 100%;
+            }
+        }
+        .banner-right {
+            text-align: center;
+        }
+    }
+}
+// Extral large
+@media (min-width: 1140px) and (max-width: 1320px){
 
-/* >= PC */
-@media (min-width: 993px) {
-.scroll-page {
-    padding-top: 100px;
-}  
+}
+// XXl
+@media (min-width: 1320px) {
+
 }
