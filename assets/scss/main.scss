@@ -112,8 +112,9 @@ header {
     }
     .banner-right {
         margin: 40px 0;
-
-
+        img {
+            width: 100%;
+        }
     }
 }
 .img-left {
@@ -158,41 +159,46 @@ header {
     .container {
         .row {
             align-items: center;
-                .services-right {
-                    h2 {
-                        margin-bottom: 20px;
+            .services-left {
+                img {
+                    width: 100%;
+                }
+            }
+            .services-right {
+                h2 {
+                    margin-bottom: 20px;
 
+                }
+                p {
+                    margin: 30px 0 60px 0;
+                }
+                .services-process {
+                    h4 {
+                        margin-bottom: 20px;
                     }
-                    p {
-                        margin: 30px 0 60px 0;
-                    }
-                    .services-process {
-                        h4 {
-                            margin-bottom: 20px;
-                        }
-                        .bar-container {
-                            margin-bottom: 30px;
-                            width: 100%;
-                            height: 8px;
+                    .bar-container {
+                        margin-bottom: 30px;
+                        width: 100%;
+                        height: 8px;
+                        border-radius: 4px;
+                        background-color: #f7eff1;
+                        .process {
+                            height: 100%;
+                            width: 84%;
+                            background-color: #fe3f40;
+                            position: relative;
                             border-radius: 4px;
-                            background-color: #f7eff1;
-                            .process {
-                                height: 100%;
-                                width: 84%;
-                                background-color: #fe3f40;
-                                position: relative;
-                                border-radius: 4px;
-                                span {
-                                    position: absolute;
-                                    bottom: 8px;
-                                    right: 0;
-                                    font-size: 1.5rem;
-                                    font-weight: 500;
-                                }
+                            span {
+                                position: absolute;
+                                bottom: 8px;
+                                right: 0;
+                                font-size: 1.5rem;
+                                font-weight: 500;
                             }
                         }
                     }
                 }
+            }
         }
     }
 }
@@ -217,10 +223,11 @@ header {
                 }
                 .item-hidden {
                     top: 0;
+                    right: 0;
                     left: 0;
                     z-index: -1;
                     position: absolute;
-                    padding: 40px;
+                    padding: 20px;
                     background-color: #fe3f40;
                     border-radius: 20px;
                     color: #fff;
