@@ -5,6 +5,10 @@ body {
 header {
   background-color: #fafafa;
   font-size: 2.4rem;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 99;
 }
 header .navbar {
   height: 100px;
@@ -53,9 +57,10 @@ header .navbar ul li .navbar-btn a {
 
 .banner {
   position: relative;
+  padding: 120px 0 0 0;
 }
 .banner .banner-left {
-  margin-right: 40px;
+  margin: 4px 40px 40px 0;
 }
 .banner .banner-left h6 {
   font-size: 1.8rem;
@@ -72,13 +77,13 @@ header .navbar ul li .navbar-btn a {
   font-size: 1.5rem;
   margin: 20px 0;
 }
-.banner .banner-input {
+.banner .banner-left .banner-input {
   position: relative;
   display: flex;
   width: 70%;
   align-items: center;
 }
-.banner .banner-input input {
+.banner .banner-left .banner-input input {
   font-size: 1.5rem;
   background-color: #03a4ed;
   height: 66px;
@@ -89,16 +94,19 @@ header .navbar ul li .navbar-btn a {
   outline: none;
   caret-color: #fafafa;
 }
-.banner .banner-input input::placeholder {
+.banner .banner-left .banner-input input::placeholder {
   color: #fafafa;
 }
-.banner .banner-input button {
+.banner .banner-left .banner-input button {
   font-size: 1.5rem;
   position: absolute;
   padding: 12px 25px;
   border-radius: 30px;
   right: 10px;
   border: none;
+}
+.banner .banner-right {
+  margin: 40px 0;
 }
 
 .img-left {
@@ -301,6 +309,98 @@ header .navbar ul li .navbar-btn a {
   border-radius: 20px;
 }
 
+.message {
+  background-image: url(../images/contact-bg.png);
+  padding: 110px 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.message .container .message-left {
+  color: #fff;
+}
+.message .container .message-left h2 {
+  margin-bottom: 40px;
+}
+.message .container .message-left p {
+  margin-bottom: 40px;
+}
+.message .container .message-left .message-call {
+  display: flex;
+  align-items: center;
+}
+.message .container .message-left .message-call span {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+}
+.message .container .message-left .message-call span i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 25px;
+  color: #fe3f40;
+  margin-right: 8px;
+}
+.message .container .message-left .message-call h4 {
+  margin-right: 20px;
+}
+.message .container .form {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 25px;
+}
+.message .container .form input {
+  height: 50px;
+  border: none;
+  border-radius: 25px;
+  padding: 0 20px;
+  font-size: 1.5rem;
+  outline: none;
+  margin-bottom: 20px;
+  background-color: #d1f3ff;
+}
+.message .container .form .full-name {
+  display: flex;
+}
+.message .container .form .full-name input {
+  flex: 1;
+}
+.message .container .form .full-name input:first-child {
+  margin-right: 20px;
+}
+.message .container .form textarea {
+  border-radius: 25px;
+  margin-bottom: 20px;
+  width: none;
+  resize: vertical;
+  background-color: #d1f3ff;
+  outline: none;
+  border: 2px solid #d1f3ff;
+}
+.message .container .form textarea:focus {
+  border: 2px solid #99e4ff;
+}
+.message .container .form button {
+  padding: 10px 20px;
+  background-color: #03a4ed;
+  color: #fff;
+  align-self: flex-start;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  font-size: 1.5rem;
+}
+
+footer .footer-content {
+  text-align: center;
+  margin: 40px 0;
+}
+
 :root {
   --white--color: #fff;
   --black--color: #000;
@@ -330,6 +430,58 @@ html {
   font-size: 62.5%;
   font-family: "Poppins", sans-serif;
   background-color: white;
+}
+
+@media (min-width: 576px) and (max-width: 720px) {
+  .banner .banner-left {
+    margin-right: 0;
+    text-align: center;
+  }
+  .banner .banner-left .banner-input {
+    width: 100%;
+  }
+  .banner .banner-right {
+    text-align: center;
+  }
+}
+@media (min-width: 720px) and (max-width: 960px) {
+  .banner .banner-left {
+    margin-right: 0;
+    text-align: center;
+  }
+  .banner .banner-left .banner-input {
+    width: 100%;
+  }
+  .banner .banner-right {
+    text-align: center;
+  }
+
+  .about {
+    position: relative;
+    padding: 80px 0 150px 0;
+  }
+  .about .container .about-left {
+    position: absolute;
+    right: 0;
+    bottom: -150px;
+    z-index: 1;
+  }
+  .about .container .about-right {
+    z-index: 2;
+    position: relative;
+  }
+}
+@media (min-width: 960px) and (max-width: 1140px) {
+  .banner .banner-left {
+    margin-right: 0;
+    text-align: center;
+  }
+  .banner .banner-left .banner-input {
+    width: 100%;
+  }
+  .banner .banner-right {
+    text-align: center;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
