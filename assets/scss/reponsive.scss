@@ -1,157 +1,11 @@
-
-// Extral Small
-@media (max-width: 576px) {
-
-
-}
-
-
-//Medium
-@media (min-width: 576px) and (max-width: 768px){
-
-}
-    
-
-//Large
-@media (max-width: 992px){
-
-    .banner {
-        .banner-left {
-            margin-right: 0;
-            text-align: center;
-            .banner-input {
-                width: 100%;
-            }
-        }
-        .banner-right {
-            text-align: center;
-        }
-    }
-    .about {
-        position: relative;
-        padding: 80px  0 150px 0;
-        .container {
-            .about-left {
-                position: absolute;
-                right: 0;
-                bottom: -150px;
-                z-index: 1
-            }
-            .about-right {
-                z-index: 2;
-                position: relative;
-            }
-        }
-    }
-    
-    .about {
-        background-image: none;
-        .container {
-            .row {  
-                    .about-right {          
-                        .about-list {
-                            background-color: #fe3f40;
-                            border-radius: 25px;
-                            width: 100%;
-                            padding: 20px;
-                            .about-des {
-                                padding-left: 20px;
-                                h4 {
-                                    color: #fff;
-                                }
-                                p {
-                                    color: #fff;
-                                }
-                            }
-                        }
-                    }
-            }
-        }
-    }
-
-    .services {
-        padding: 140px 0px 120px 0px;
-        text-align: center;
-        .container {
-            .row {
-                
-                .services-left {
-                    margin-bottom: 40px;
-                }
-                .services-right {
-
-                    .services-process {
-
-                        h4 {
-                            text-align: left;
-                        }
-                        
-                    }
-                }
-            }
-        }
-    }
-
-    .portfolio {
-        .container {
-            .row:last-child {
-                padding: 120px 0 80px 0;
-                .por-item {
-                    position: relative;
-                    transition: all ease 1s;
-                    .item-visible {
-                        background-color: #fff;
-                        width: 100%;
-                        display: flex;
-                        justify-content: center;
-                        box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.06);
-                        border-radius: 20px;
-                        padding: 40px 0;
-                        transition: all ease 1s;
-                        margin-bottom: 100px;
-
-    
-                    }
-                    .item-hidden {
-                        padding: 20px;
-    
-                        h4 {
-                            margin-bottom: 20px;
-                        }
-                        p {
-                            
-                        }
-                    }
-                    .item-hidden::after {
-                        content: "";
-                        border-color: #fe3f40 transparent transparent transparent;
-                        border-width: 10px 10px;
-                        border-style: solid;
-                        position: absolute;
-                        bottom: -20px;
-                        left: 50%;
-                        transform: translateX(-50%);
-                        transition: all ease 1s;
-                    }
-                }
-                .por-item:hover .item-visible {
-                    transform: translateY(50%)
-                }
-                .por-item:hover .item-hidden {
-                    top: -50%;
-                }
-            }
-        }
-    }
-}
-//XL
-@media (max-width: 1200px){
-    
-}
-// XXl
 @media (max-width: 1400px){
     .portfolio {
-        .container {
+        .container {    
+            .row {
+                h2 {
+                    text-align: center;
+                }
+            }
             .row:last-child {
                 padding: 120px 0 80px 0;
                 .por-item {
@@ -201,4 +55,180 @@
             }
         }
     }
+}
+
+@media (max-width: 1200px){
+    .blog {
+        .container {
+            .row {
+                .blog-left {
+    
+                    margin-bottom: 40px;
+                    h2 {
+                        margin-bottom: 40px;
+                    }
+                    .blog-img {
+                        position: relative;
+                        img {
+                            border-radius: 20px;
+                            margin-bottom: 50px;
+                            width: 100%;
+                        }
+
+                    }
+
+                }
+                .blog-right {
+                    .des-top {  
+                        display: none;
+                    }
+                    .list-right {
+                        margin-left: 30px;
+                        margin-bottom: 10px;
+                        ul {
+                            display: flex;
+                            justify-content: center;
+                            li {
+                                margin-bottom: 20px;
+                                .des-right {
+                                    margin-right: 20px;
+                                }
+                                .img-right {
+                                    width: 100%;
+                                    img {
+                                        
+                                    }
+                                }
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .message {
+        .container {
+            .message-left {
+                text-align: center;
+                margin-bottom: 40px;
+                .message-call {
+                    justify-content: center;
+
+                }
+            }
+            .form {
+                .full-name {
+                    flex-direction: column;
+                    input {
+                    line-height: 50px;
+
+                    }
+                    input:first-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Large
+@media (max-width: 992px){
+    
+    .banner {
+        .banner-left {
+            margin-right: 0;
+            text-align: center;
+            .banner-input {
+                width: 100%;
+            }
+        }
+        .banner-right {
+            text-align: center;
+        }
+    }
+    
+    .about {
+        position: relative;
+        padding: 80px  0 150px 0;
+        background-image: none;
+        .container {
+            .row {  
+                .about-left {
+                    position: absolute;
+                    right: 0;
+                    bottom: -150px;
+                    z-index: 1
+                }
+                .about-right {          
+                    .about-list {
+                        background-color: #fe3f40;
+                        border-radius: 25px;
+                        width: 100%;
+                        padding: 20px;
+                        z-index: 2;
+                        position: relative;
+                    }
+                }
+            }
+        }
+    }
+
+    .services {
+        padding: 140px 0px 120px 0px;
+        text-align: center;
+        .container {
+            .row {  
+                .services-left {
+                    margin-bottom: 40px;
+                }
+                .services-right {
+
+                    .services-process {
+
+                        h4 {
+                            text-align: left;
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+
+    .blog .container .row .blog-right .list-right ul li .img-right{
+        width: 50%;
+    }
+
+    .portfolio {
+        .container {
+            .row:last-child {
+                padding: 120px 0 80px 0;
+                .por-item {
+                    .item-visible {     
+                        margin-bottom: 100px;
+    
+                    }
+                    .item-hidden {
+                        padding: 20px;
+                    }   
+      
+                }
+                
+            }
+        }
+    }
+}
+
+@media (max-width: 768px){
+
+}
+
+
+// Extral Small
+@media (max-width: 576px) {
+
+
 }

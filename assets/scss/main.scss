@@ -348,7 +348,7 @@ header {
                             }
                             .img-right {
                                 img {
-
+                                    width: 100%;
                                     border-radius: 20px;
                                 }
                             }
@@ -417,6 +417,7 @@ header {
             .full-name {
                 display: flex;
                 input {
+                    height: 50px;
                     flex: 1;
                 }
                 input:first-child {
@@ -432,6 +433,8 @@ header {
                 background-color: #d1f3ff;
                 outline: none;
                 border: 2px solid #d1f3ff;
+                padding: 20px;
+                font-size: 1.5rem;
 
 
                 &:focus {
