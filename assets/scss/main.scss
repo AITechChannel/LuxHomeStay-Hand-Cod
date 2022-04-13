@@ -1,8 +1,3 @@
-body {
-    font-family: 'Poppins', sans-serif !important;
-    overflow-x: hidden;
-
-}
 header {
     background-color: #fafafa;
     font-size: 2.4rem;
@@ -60,8 +55,8 @@ header {
                 }
             }
         }
-        .menu-open {
-            display: none;
+        .menu-btn:hover {
+            cursor: pointer;
         }
     }
 
@@ -69,10 +64,9 @@ header {
 
 .banner {
     position: relative;
-    padding: 120px 0 0 0;
+    padding: 140px 0 120px 0;
     .container {
         .banner-left {
-            animation: fadeInLeft 1s ease-in-out;
             margin: 4px 40px 40px 0;
             h6 {
                 font-size: 1.8rem;
@@ -94,6 +88,7 @@ header {
                 display: flex; 
                 width: 70%;
                 align-items: center;
+                margin-top: 20px;
                 input {
                     font-size: 1.5rem;
                     background-color: #03a4ed;
@@ -119,9 +114,7 @@ header {
                 }
             }
         }
-        .banner-right {
-    
-            animation: fadeInRight 1s ease-in-out;
+        .banner-right {  
             margin: 40px 0;
             img {
                 width: 100%;
@@ -145,7 +138,7 @@ header {
         .row {  
             align-items: center;
                 .about-left {
-                    transition: all ease-in-out 0.5s;
+                    transition: all ease-in-out 1s;
                     opacity: 0;
                     img {
                         width: 100%;
@@ -182,14 +175,14 @@ header {
         .row {
             align-items: center;
             .services-left {
-
-                animation: fadeInLeft 1s ease-in-out;
+              
+                // animation: fadeInLeft 1s ease-in-out;
                 img {
                     width: 100%;
                 }
             }
             .services-right {
-                animation: fadeInRight 1s ease-in-out;
+                // animation: fadeInRight 1s ease-in-out;
                 h2 {
                     margin-bottom: 20px;
 
@@ -232,44 +225,42 @@ header {
     padding: 120px 0 0 0;    
     .container {
         .porfolio-title {
-            animation: bounceInUp 1s ease-in-out;
-            // animation-fill-mode: both;
+            text-align: center;
         }
         .row:last-child {
-            padding: 120px 0 0 0;
+            padding: 120px 0;
             .por-item {
                 position: relative;
-                // transition: all ease 1s;
                 .item-visible {
                     position: relative;
                     background-color: #fff;
                     width: 100%;
+                    height: 100%;
                     display: flex;
                     justify-content: center;
-                    box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.06);
+                    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.06);
                     border-radius: 20px;
                     padding: 40px 0;
                     transition: all ease 1s;
                     z-index: 5;
+                    opacity: 1;
 
                 }
                 .item-hidden {
-                    top: 0;
+                    top:2px;
                     right: 0;
                     left: 0;
-                    // z-index: -1;
+                    width: 100%;
+                    border: none;
                     position: absolute;
                     padding: 20px;
-                    background-color: #fe3f40;
+                    background: linear-gradient(105deg, rgba(255,77,30,1) 0%, rgba(255,44,109,1) 100%);
                     border-radius: 20px;
                     color: #fff;
                     transition: all ease 1s;
 
                     h4 {
                         margin-bottom: 20px;
-                    }
-                    p {
-                        
                     }
                 }
                 .item-hidden::after {
@@ -288,22 +279,20 @@ header {
                 transform: translateY(50%)
             }
             .por-item:hover .item-hidden {
-                top: -50%;
+                top: -40%;
             }
         }
     }
 }
 
 .blog {
-    padding: 120px 0 0 0;
-
+    padding: 120px 0;
     .container {
         .row {
-            .blog-left {
-
-                h2 {
-                    margin-bottom: 40px;
-                }
+            .blog-left-top {
+                margin-bottom: 40px;
+            }
+            .blog-left-bottom {
                 .blog-img {
                     position: relative;
                     img {
@@ -331,7 +320,6 @@ header {
                                 i {
                                     color: #fe3f40;
                                     margin-right: 8px;
-                      
                                 }
                             }
                         }
@@ -351,15 +339,20 @@ header {
                     margin: 40px 0 20px 0 ;
                 }
             }
-            .blog-right {
-                .des-top {
+            .blog-right-top {
+                position: relative;
+                img {
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                }
                     display: flex;
                     justify-content: flex-end;
-                    margin-bottom: 10px;
-                }
+            }
+            .blog-right-bottom {
                 .list-right {
                     margin-left: 30px;
-                    margin-bottom: 10px;
+                    margin-bottom: 20px;
                     ul {
                         li {
                             align-items: center;
@@ -381,6 +374,7 @@ header {
                                 }
                             }
                             .img-right {
+                                width: 50%;
                                 img {
                                     width: 100%;
                                     border-radius: 20px;
@@ -395,9 +389,8 @@ header {
 }
 
 .message {
-
     background-image: url(../images/contact-bg.png);
-    padding: 120px 0;
+    padding: 140px 0 120px 0;
     background-repeat: no-repeat;
     background-size: cover;
     .container {
@@ -433,7 +426,7 @@ header {
                 }
             }
         }
-        .form {
+        .message-right {
             display: flex;
             flex-direction: column;
             background-color: #fff;
@@ -469,8 +462,6 @@ header {
                 border: 2px solid #d1f3ff;
                 padding: 20px;
                 font-size: 1.5rem;
-
-
                 &:focus {
                     border: 2px solid #99e4ff;
                 }
@@ -485,7 +476,6 @@ header {
                 border: none;
                 font-size: 1.5rem;
             }
-
         }
     }
 }
@@ -496,6 +486,8 @@ footer {
         margin: 40px 0;
     }
 }
+
+
 
 
 @import "./base.scss";

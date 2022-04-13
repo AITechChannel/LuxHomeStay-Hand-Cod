@@ -1,4 +1,13 @@
 @media (max-width: 1400px){
+    .banner {
+        .container {
+            .banner-left {
+                .banner-input {
+                    width: 100%;
+                }
+            }
+        }
+    }
     .portfolio {
         .container {    
             .row {
@@ -7,6 +16,10 @@
                 }
             }
             .row:last-child {
+                padding: 120px 0 0 0;
+                .por-item:nth-child(1), .por-item:nth-child(2) {
+                    margin-bottom: 100px;
+                }
                 .por-item {
                     position: relative;
                     transition: all ease 1s;
@@ -19,18 +32,12 @@
                         border-radius: 20px;
                         padding: 40px 0;
                         transition: all ease 1s;
-                        margin-bottom: 100px;
-                    
-    
                     }
                     .item-hidden {
                         padding: 20px;
     
                         h4 {
                             margin-bottom: 20px;
-                        }
-                        p {
-                            
                         }
                     }
                     .item-hidden::after {
@@ -57,11 +64,14 @@
 }
 
 @media (max-width: 1200px){
+    
     .blog {
         .container {
             .row {
-                .blog-left {
-    
+                .blog-left-top {
+                    margin-bottom: 20px;
+                }
+                .blog-left-bottom {
                     margin-bottom: 40px;
                     h2 {
                         margin-bottom: 40px;
@@ -73,29 +83,29 @@
                             margin-bottom: 50px;
                             width: 100%;
                         }
-
                     }
-
+                }                
+                .blog-right-top {
+                    display: none;
                 }
-                .blog-right {
+                .blog-right-bottom {
                     .des-top {  
                         display: none;
                     }
                     .list-right {
                         margin-left: 30px;
-                        margin-bottom: 10px;
+                        margin-bottom: 40px;
                         ul {
                             display: flex;
                             justify-content: center;
                             li {
-                                margin-bottom: 20px;
                                 .des-right {
                                     margin-right: 20px;
                                 }
                                 .img-right {
                                     width: 100%;
                                     img {
-                                        
+                                        width: 100%;   
                                     }
                                 }
                             }
@@ -117,7 +127,7 @@
 
                 }
             }
-            .form {
+            .message-right {
                 .full-name {
                     flex-direction: column;
                     input {
@@ -135,8 +145,10 @@
 
 //Large
 @media (max-width: 992px){
+
     header {
         .navbar {
+            height: 80px;
             position: relative;
             ul {
                 display: flex;
@@ -168,10 +180,8 @@
                 flex-direction: column;
                 justify-content: space-between;
                 width: 30px;
-                height: 25px;
-                // background-color: #03a4ed;
+                height: 24px;
 
-                transform-origin: center;
                 .line {
                     position: absolute;
                     width: 100%;
@@ -184,30 +194,19 @@
                 }
                 .line2 {
                     transition: all ease 0.3s;
-                    top: 50%;
-                    transform: translateY(-50%)
+                    top: 10px;
                 }
                 .line2-1 {
                     transition: all ease 0.3s;
-                    top: 50%;
-                    transform: translateY(-50%)
+                    top: 10px;
                 }
                 .line3 {
                     bottom: 0;
                 }
             }
-            // .menu-open {
-            //     display: block;
-            //     color: #03a4ed;
-            //     font-size: 3rem;
-            // }
-            // .menu-close {
-            //     display: block;
-            //     color: #03a4ed;
-            //     font-size: 3rem;
-            // }
         }
     }
+
     .banner {
         .banner-left {
             margin-right: 0;
@@ -269,36 +268,70 @@
         }
     }
 
-    .blog .container .row .blog-right .list-right ul li .img-right{
-        width: 50%;
+    .portfolio {
+        .row:last-child {
+            padding: 120px 0 80px 0;
+            .por-item {
+                .item-visible {     
+
+                }
+                .item-hidden {
+                    padding: 20px;
+                }   
+    
+            }
+            
+        }
     }
 
-    .portfolio {
-        .container {
-            .row:last-child {
-                padding: 120px 0 80px 0;
-                .por-item {
-                    .item-visible {     
-                        margin-bottom: 100px;
-    
-                    }
-                    .item-hidden {
-                        padding: 20px;
-                    }   
-      
-                }
-                
-            }
-        }
+    .blog .container .row .blog-right-bottom .list-right ul li .img-right {
+        width: 45%;
+    }
+    .blog .container .row .blog-right-bottom .list-right {
+        margin-left: 0;
     }
 }
 
 @media (max-width: 768px){
+    header {
+        .navbar {
+            height: 70px;
+        }
+    }
+    .banner {
+        padding: 120px 0 0 0;
+    }
+    .about {
+        padding: 72px 0 0 0;
+        .about-left {
+            display: none;
+        }
+    }
+    .services {
+        padding: 72px 0 0 0;
+    }
+    .portfolio {
+        padding: 72px 0 0 0;
+        .container {
+            .row:last-child {
+                padding-bottom: 0;
+            }            
+        }
+
+    }
+    .blog {
+        padding: 72px 0 0 0;
+    }
+    
+    .message {
+        padding: 72px 0 0 0;
+    }
+
 
 }
 
 
-// Extral Small
+
 @media (max-width: 576px) {
 
 

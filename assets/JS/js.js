@@ -11,7 +11,7 @@ let menuList = $(".navbar ul")
 menuList.style.bottom = 0
 
 menuBtn.onclick = function() {
-
+    console.log(menuList.style.bottom)
     if (menuList.style.bottom == "0px") {
 
         let menuHeight = menuList.offsetHeight;
@@ -28,23 +28,22 @@ menuBtn.onclick = function() {
         menuBtnLine1.style.opacity = 1
         menuBtnLine3.style.opacity = 1
     
-        menuBtnLine2.style.transform = 'rotate(0deg) translateY(-50%)'
-        menuBtnLine2_1.style.transform = 'rotate(0deg) translateY(-50%)'
+        menuBtnLine2.style.transform = 'rotate(0deg)'
+        menuBtnLine2_1.style.transform = 'rotate(0deg)'
     }
 
 }
-console.log(menuList.style.bottom != "0px")
 function checkClicks() {
 
     if (menuList.style.bottom != "0px") {
         onclick = function(e) {
-            if (e.target != menuList && e.target != menuBtn) {
+            if (e.target != menuList && e.target.prototype.closet != menuBtn) {
                 menuList.style.bottom = 0
                 menuBtnLine1.style.opacity = 1
                 menuBtnLine3.style.opacity = 1
             
-                menuBtnLine2.style.transform = 'rotate(0deg) translateY(-50%)'
-                menuBtnLine2_1.style.transform = 'rotate(0deg) translateY(-50%)'
+                menuBtnLine2.style.transform = 'rotate(0deg)'
+                menuBtnLine2_1.style.transform = 'rotate(0deg)'
             }
         }
     }
@@ -53,33 +52,92 @@ function checkClicks() {
 let bannerLeft = $('.banner-left')
 let bannerRight = $('.banner-right')
 
-let aboutLeft = $('.about-left')
-let aboutList = $$('.about-right .about-list')
+
 
 
 window.onload = function() {
-    aboutLeft.style.opacity = 1;
-    var delay = 0;
-    aboutList.forEach(function(item) {
-        delay += 0.2;
+    animation()
+}
+window.onscroll = function() {
+    bounceInUps()
+
+    animation()
+}
+let windowHeight = window.innerHeight
+
+function animation() {
+
+    opacityOnly()
+    fadeInLeft('banner-left')
+    fadeInRight('banner-right')
+    fadeInLeft('services-left')
+    fadeInRight('services-right')
+    fadeInLeft('message-left')
+    fadeInRight('message-right')
+    fadeInLeft('blog-left-bottom')
+    fadeInRight('blog-right-bottom')
+    bounceInUp('blog-right-top')
+    bounceInUp('blog-left-top')
+    bounceInUp('porfolio-title')
+    // bounceInUps()
+}
+
+function opacityOnly() {
+    let aboutLeft = $('.about-left')
+    let aboutList = $$('.about-right .about-list')
+    let about = $('.about')
+    let rectAbout = about.getBoundingClientRect()
+    if(!(rectAbout.top > windowHeight || rectAbout.bottom <0)) {
+        aboutLeft.style.opacity = 1;
+        var delay = 0;
+        aboutList.forEach(function(item) {
+        delay += 0.5;
         item.style.transitionDelay = `${delay}s`
         item.style.opacity = 1;
-
     })
-let body = $('body')
+    }
+}
 
-    body.style.width = window.innerWidth;
+function fadeInLeft(x, y ='0s') {
+    let elementLeft = $(`.${x}`)
+    let rectElementLeft = elementLeft.getBoundingClientRect()
+    let growHeight = windowHeight - 1/2*rectElementLeft.height
+    if (!(rectElementLeft.top > growHeight || rectElementLeft.bottom <0)) {
+        elementLeft.classList.remove('opacity0')
+        elementLeft.style.animation = `fadeInLeft 0.8s ease-in-out ${y}`
+    }
+}
 
-
+function fadeInRight(x, y ='0s') {
+    let elementRight = $(`.${x}`)
+    let rectElementRight = elementRight.getBoundingClientRect()
+    let growHeight = windowHeight - 1/2*rectElementRight.height
+    if (!(rectElementRight.top > growHeight || rectElementRight.bottom <0)) {
+        elementRight.classList.remove('opacity0')
+        elementRight.style.animation = `fadeInRight 0.8s ease-in-out ${y}`
+    }
 }
 
 
-window.onscroll = function() {
-    let rect = bannerLeft.getBoundingClientRect()
+function bounceInUp(x, y ='0s') {
+    let element = $(`.${x}`)
+    let rectElement = element.getBoundingClientRect()
+    let growHeight = windowHeight - 1/2*rectElement.height
+    if (!(rectElement.top > growHeight || rectElement.bottom <0)) {
+        element.style.animation = `bounceInUp 0.5s ease-in-out ${y}`
+    }
 }
-console.log(window.innerWidth)
 
-let body = $('body')
-// window.onload = function() {
-    body.style.width = window.innerWidth;
-// }
+function bounceInUps() {
+    
+    let porItem = $$('.por-item')
+    var delay = 0;
+    porItem.forEach(function(item) {
+        let rectItem= item.getBoundingClientRect()
+        if(!(rectItem.top > windowHeight || rectItem.bottom <0)) {
+            item.style.animation = `bounceInUp 0.5s ease-in-out ${delay}s`
+            delay += 0.3;
+
+    }
+    })
+}
