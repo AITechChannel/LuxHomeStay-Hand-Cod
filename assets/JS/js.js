@@ -57,11 +57,14 @@ let bannerRight = $('.banner-right')
 
 window.onload = function() {
     animation()
+    statusNavbar()
 }
 window.onscroll = function() {
     bounceInUps()
 
     animation()
+    statusNavbar()
+    
 }
 let windowHeight = window.innerHeight
 
@@ -139,5 +142,67 @@ function bounceInUps() {
             delay += 0.3;
 
     }
+    })
+}
+
+// function statusNabar() {
+
+//     menu = [  {
+//         about: 'about',
+//         className: 'home'
+//     },{
+//         about: 'about',
+//         className: 'about'
+//     }, {
+//         about: 'about',
+//         className: 'services'
+//     },{
+//         about: 'about',
+//         className: 'portfolio'
+//     },{
+//         about: 'about',
+//         className: 'blog'
+//     },{
+//         about: 'about',
+//         className: 'message'
+//     }
+// ]
+    
+// menu.forEach(function(item) {
+//     let page =item.className
+//     let cutPage = page.slice(0, 4)
+//     let elementPage = $(`#${page}`)
+//     let rectElementPage = elementPage.getBoundingClientRect()
+//     let growHeight = windowHeight
+//     if (!(rectElementPage.top > growHeight || rectElementPage.bottom <0)) {
+//         elementPage.classList.add('active')
+//         let itemMenu = $$('.navbar ul li a')
+//         itemMenu.forEach(function(item) {
+//                 var textItem = item.innerText.toLowerCase()
+//                 item.classList.remove('active')
+//                 if(textItem.includes(`${cutPage}`)) {
+//                     item.classList.add('active')
+//                 }
+//             })
+//     }
+// })
+// }
+function statusNavbar() {
+    let pages = $$('.page')
+    pages.forEach(function(page) {
+        let rectPage = page.getBoundingClientRect()
+        let growHeight = window.innerHeight- 1/2*rectPage.height
+        if (!(rectPage.top > growHeight || rectPage.bottom <0)) {
+            let menuItems = $$('.navbar ul li a')
+            menuItems.forEach(function(menuItem) {
+                menuItem.classList.remove('active')
+                let nameId = page.getAttribute('id')
+                let menuItemHre = menuItem.getAttribute('href')
+
+                if(menuItemHre.includes(nameId)) {
+                    menuItem.classList.add('active')
+                }
+            })
+        }
     })
 }
