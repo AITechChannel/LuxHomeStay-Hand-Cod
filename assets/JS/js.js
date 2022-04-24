@@ -11,7 +11,6 @@ let menuList = $(".navbar ul")
 menuList.style.bottom = 0
 
 menuBtn.onclick = function() {
-    console.log(menuList.style.bottom)
     if (menuList.style.bottom == "0px") {
 
         let menuHeight = menuList.offsetHeight;
@@ -37,7 +36,7 @@ function checkClicks() {
 
     if (menuList.style.bottom != "0px") {
         onclick = function(e) {
-            if (e.target != menuList && e.target.prototype.closet != menuBtn) {
+            if (e.target != menuList && e.target.closest('.menu-btn') != menuBtn) {
                 menuList.style.bottom = 0
                 menuBtnLine1.style.opacity = 1
                 menuBtnLine3.style.opacity = 1

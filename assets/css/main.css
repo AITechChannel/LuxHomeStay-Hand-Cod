@@ -1,5 +1,5 @@
 header {
-  background-color: #fafafa;
+  background-color: #fff;
   font-size: 2.4rem;
   position: fixed;
   left: 0;
@@ -49,7 +49,7 @@ header .navbar ul li .navbar-btn {
   margin-left: 40px;
 }
 header .navbar ul li .navbar-btn a {
-  color: #fafafa;
+  color: #fff;
 }
 header .navbar .menu-btn:hover {
   cursor: pointer;
@@ -93,10 +93,10 @@ header .navbar .menu-btn:hover {
   border: none;
   padding: 0 170px 0 30px;
   outline: none;
-  caret-color: #fafafa;
+  caret-color: #fff;
 }
 .banner .banner-left .banner-input input::placeholder {
-  color: #fafafa;
+  color: #fff;
 }
 .banner .banner-left .banner-input button {
   font-size: 1.5rem;
