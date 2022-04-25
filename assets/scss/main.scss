@@ -417,18 +417,25 @@ header {
             padding: 0 20px;
             font-size: 1.5rem;
             outline: none;
-            margin-bottom: 20px;
             background-color: #d1f3ff;
+            width: 100%;
+        }
+        .error {
+            border: 1px solid #fe3f40;
         }
         .full-name {
             display: flex;
-            input {
+            .name-container, .surname-container {
+                margin-bottom: 20px;
                 flex: 1;
             }
-            input:first-child {
+            .name-container {
                 margin-right: 20px;
             }
-
+            
+        }
+        .email-container {
+            margin-bottom: 20px;
         }
         textarea {
             border-radius: 25px;
@@ -453,6 +460,16 @@ header {
             border-radius: 20px;
             border: none;
             font-size: 1.5rem;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        .message-error {
+            font-size: 1.2rem;
+            margin: 5px 0 0 0;
+            color:#fe3f40;
+            padding: 0 20px;
+
         }
     }
 }

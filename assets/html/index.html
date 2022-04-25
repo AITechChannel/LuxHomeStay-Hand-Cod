@@ -360,15 +360,24 @@
 
         </div>
         <div class="col-lg-6 col-12">
-          <div class="message-right opacity0">
+          <form class="message-right opacity0">
             <div class="full-name">
-              <input type="text" placeholder="Name">
-              <input type="text" placeholder="Surname">
+              <div class="name-container">
+                <input type="text" placeholder="Name" id="name">
+                <p class="message-error"></p>
+              </div>
+              <div class="surname-container">
+                <input type="text" placeholder="Surname" id="surname">
+                <p class="message-error"></p>
+              </div>
             </div>
-            <input type="text" placeholder="Your Email">
+            <div class="email-container">
+              <input type="text" placeholder="Your Email" id="email">
+              <p class="message-error"></p>
+            </div>
             <textarea name="" id="" cols="30" rows="10"></textarea>
-            <button>Send message</button>
-          </div>
+            <button type="submit" class="submit">Send Message</button>
+          </form>
         </div>
       </div>
     </div>

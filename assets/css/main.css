@@ -395,17 +395,24 @@ header .navbar .menu-btn:hover {
   padding: 0 20px;
   font-size: 1.5rem;
   outline: none;
-  margin-bottom: 20px;
   background-color: #d1f3ff;
+  width: 100%;
+}
+.message .message-right .error {
+  border: 1px solid #fe3f40;
 }
 .message .message-right .full-name {
   display: flex;
 }
-.message .message-right .full-name input {
+.message .message-right .full-name .name-container, .message .message-right .full-name .surname-container {
+  margin-bottom: 20px;
   flex: 1;
 }
-.message .message-right .full-name input:first-child {
+.message .message-right .full-name .name-container {
   margin-right: 20px;
+}
+.message .message-right .email-container {
+  margin-bottom: 20px;
 }
 .message .message-right textarea {
   border-radius: 25px;
@@ -430,6 +437,15 @@ header .navbar .menu-btn:hover {
   border-radius: 20px;
   border: none;
   font-size: 1.5rem;
+}
+.message .message-right button:hover {
+  cursor: pointer;
+}
+.message .message-right .message-error {
+  font-size: 1.2rem;
+  margin: 5px 0 0 0;
+  color: #fe3f40;
+  padding: 0 20px;
 }
 
 footer .footer-content {

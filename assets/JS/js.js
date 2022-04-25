@@ -205,3 +205,82 @@ function statusNavbar() {
         }
     })
 }
+
+// Validator
+let formElement = $('form')
+formElement.onsubmit = function(e) {
+    let nameElement = $('#name')
+    let surnameElement = $('#surname')
+    let emailElement = $('#email')
+    e.preventDefault()
+
+
+    checkEmpty([nameElement, surnameElement, emailElement], 'Vui lòng nhập trường này')
+    checkEmail(emailElement, 'Vui lòng nhập email của bạn', 'Ồ, trường này phải là email')
+    checkLength([nameElement, surnameElement], 3, 9)
+
+
+    function checkOnInput(inputArray) {
+        inputArray.forEach(input => {
+            input.addEventListener('focusin', function() {
+                let messageErrorElement = input.parentElement.lastElementChild
+                        messageErrorElement.innerText = ''
+                        input.classList.remove('error')               
+            })
+            input.addEventListener('focusout', function() {
+                checkEmpty([nameElement, surnameElement, emailElement], 'Vui lòng nhập trường này')
+                checkEmail(emailElement, 'Vui lòng nhập email của bạn', 'Ồ, trường này phải là email')
+                checkLength([nameElement, surnameElement], 3, 9)              
+            })
+        })
+    }
+    checkOnInput([nameElement, surnameElement, emailElement])
+}
+
+function checkEmpty(inputArray, messageError) {
+    inputArray.forEach(input => {
+        let messageErrorElement = input.parentElement.lastElementChild
+        if(input.value.trim()== '') {
+            messageErrorElement.innerText = `${messageError}`
+            input.classList.add('error');
+
+        } else {
+            messageErrorElement.innerText = ''
+            input.classList.remove('error')
+
+        }
+    })
+
+}
+
+function checkEmail(inputEmail, errorEmpty, errorEmail) {
+    const regexEmail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    let messageErrorElement = inputEmail.parentElement.lastElementChild
+    console.log(inputEmail.value)
+    if(regexEmail.test(inputEmail.value)) {
+        messageErrorElement.innerText = ''
+    } else {
+        if(inputEmail.value =='') {
+            messageErrorElement.innerText = `${errorEmpty}`
+
+        } else {
+            messageErrorElement.innerText = `${errorEmail}`
+
+        }
+    }
+
+}
+
+function checkLength(inputArray, min, max) {
+    inputArray.forEach(input => {
+        let messageErrorElement = input.parentElement.lastElementChild
+        if(input.value !== '') {
+            console.log(2)
+            if(input.value.trim().length < min) {
+                messageErrorElement.innerText = `Trườn nay phải lớn hơn ${min} ký tự`
+            } else if (input.value.trim().length > max) {
+                messageErrorElement.innerText = `Trườn này phải nhỏ hơn ${max} ký tự`
+            }
+        }
+    })
+}
