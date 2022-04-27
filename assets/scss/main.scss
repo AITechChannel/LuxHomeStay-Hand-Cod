@@ -295,12 +295,8 @@
             margin-bottom: 10px;
         }
     }
-    .popular-list {
+    .slide-container {
         position: relative;
-        display: flex;
-        margin: 0 -8px;
-        height: 300px;
-
         i {
             width: 50px;
             height: 50px;
@@ -314,42 +310,57 @@
             justify-content: center;
             border: 1px solid rgba(0, 0, 0, 0.1);
             top: 50%;
+            overflow: unset;
         }
         .img--prev{
-            left: 16px;
+            left: 0;
             transform: translateX(-50%) translateY(-50%);
         }
         .img--next {
-            right: 16px;
+            right: 0;
             transform: translateX(50%) translateY(-50%);
 
         }
-        .img-container {  
-            padding: 0 8px;
-            width: 20%;   
+        .popular-container {
+            width: 100%;
             position: relative;
-            background-color: $white;
-            .img {
-                border-radius:10px;
-                overflow: hidden;
-                display: block;
-                height: 100%;
-
-            }
-            .img-des {
-                color: $white;
+            overflow: hidden;
+            .popular-list {
+                transition: all ease-in-out 0.3s; 
                 position: absolute;
-                bottom: 20px;
-                right: 50%;
-                h1 {
-                    margin-bottom: 8px;
+                display: flex;
+                margin: 0 -8px;
+                height: 300px;
+                left: 0;
+                .img-container {  
+                    pointer-events: none;
+                    padding: 0 8px;
+                    // width: 20%;   
+                    position: relative;
+                    background-color: $white;
+                    .img {
+                        border-radius:10px;
+                        overflow: hidden;
+                        display: block;
+                        height: 100%;
+        
+                    }
+                    .img-des {
+                        color: $white;
+                        position: absolute;
+                        bottom: 20px;
+                        right: 50%;
+                        h1 {
+                            margin-bottom: 8px;
+                        }
+                    }
+                    img {
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                        // height: 310px;
+                    }
                 }
-            }
-            img {
-                height: 100%;
-                width: 100%;
-                object-fit: cover;
-                // height: 310px;
             }
         }
     }

@@ -371,13 +371,10 @@ body {
 .popular .title p {
   margin-bottom: 10px;
 }
-.popular .popular-list {
+.popular .slide-container {
   position: relative;
-  display: flex;
-  margin: 0 -8px;
-  height: 300px;
 }
-.popular .popular-list i {
+.popular .slide-container i {
   width: 50px;
   height: 50px;
   display: flex;
@@ -390,37 +387,51 @@ body {
   justify-content: center;
   border: 1px solid rgba(0, 0, 0, 0.1);
   top: 50%;
+  overflow: unset;
 }
-.popular .popular-list .img--prev {
-  left: 16px;
+.popular .slide-container .img--prev {
+  left: 0;
   transform: translateX(-50%) translateY(-50%);
 }
-.popular .popular-list .img--next {
-  right: 16px;
+.popular .slide-container .img--next {
+  right: 0;
   transform: translateX(50%) translateY(-50%);
 }
-.popular .popular-list .img-container {
+.popular .slide-container .popular-container {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.popular .slide-container .popular-container .popular-list {
+  transition: all ease-in-out 0.3s;
+  position: absolute;
+  display: flex;
+  margin: 0 -8px;
+  height: 300px;
+  left: 0;
+}
+.popular .slide-container .popular-container .popular-list .img-container {
+  pointer-events: none;
   padding: 0 8px;
-  width: 20%;
   position: relative;
   background-color: #fff;
 }
-.popular .popular-list .img-container .img {
+.popular .slide-container .popular-container .popular-list .img-container .img {
   border-radius: 10px;
   overflow: hidden;
   display: block;
   height: 100%;
 }
-.popular .popular-list .img-container .img-des {
+.popular .slide-container .popular-container .popular-list .img-container .img-des {
   color: #fff;
   position: absolute;
   bottom: 20px;
   right: 50%;
 }
-.popular .popular-list .img-container .img-des h1 {
+.popular .slide-container .popular-container .popular-list .img-container .img-des h1 {
   margin-bottom: 8px;
 }
-.popular .popular-list .img-container img {
+.popular .slide-container .popular-container .popular-list .img-container img {
   height: 100%;
   width: 100%;
   object-fit: cover;
