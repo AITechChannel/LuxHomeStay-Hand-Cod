@@ -1,6 +1,6 @@
 @import "./base.scss";
 @import "./reponsive.scss";
-
+@import "./_global";
 
 .header {
     height: 80px;
@@ -287,14 +287,6 @@
 .popular {
     padding: 20px 0 0 0;
 
-    .title {
-        h2 {
-            margin: 10px 0;
-        }
-        p {
-            margin-bottom: 10px;
-        }
-    }
     .slide-container {
         position: relative;
         i {
@@ -368,18 +360,146 @@
 
 .promotion {
     padding: 20px 0 0 0;
-    .title {
-        h2 {
-            margin: 10px 0;
-        }
-        p {
-            margin-bottom: 10px;
-        }
-    }
     &-img {
         img {
             width: 100%;
             border-radius: 10px;
         }
     }
+}
+
+.manual {
+
+    a {
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+    }
+
+}
+
+
+
+.intro {
+    padding: 50px 0 0 0;
+
+    .logo {
+        svg {
+            width: 343px;
+
+        }
+    }
+    .descriptions {
+        p {
+            margin-bottom: 20px;
+        }
+    }
+    .app {
+        margin: 72px 0 20px 0;
+        .qr-app {
+            padding: 12px;
+            border: 1px solid rgb(221, 221, 221);
+            img {
+                width: 100%;
+            }
+        }
+        .store-app {
+            img{
+                margin-bottom: 20px;
+            }
+        }
+    }
+    .img-mobile {
+        img {
+    
+            width: 100%;
+        }
+    }
+}
+
+
+.footer {
+    padding: 50px 0 0 0;
+    &-widget {
+        &__title {
+            margin-bottom: 20px;
+        }
+        margin-bottom: 40px;
+        &__logo {
+            svg {
+                width: 200px;
+            }
+        }
+        &__link {
+            margin-top: 20px;
+            a {
+                color: $dark;
+
+                font-size: 1.4rem;
+                display: block;
+                padding: 6px 0;
+            }
+        }
+        &__message {
+            margin-top: 20px;;
+            display: flex;
+            align-items: center;
+            .message__img {
+                margin-right: 10px;
+            }
+            a {
+                color: $dark;
+                font-size: 1.4rem;
+                display: block;
+                padding: 4px 0;
+            }
+            p {
+                font-weight: 600;
+            }
+        }
+        &__payments {
+            display: flex;
+            // align-items: center;
+            img {
+                max-width: 100px;
+            }
+        }
+        &__social {
+            a {
+                font-size: 2rem;
+                color: $dark;
+                i {
+                    margin-right: 8px;
+                }
+            }
+        }
+    }
+    .info__coder{
+        text-align: center;
+        padding: 20px 0;
+        border-top: 1px solid rgb(221, 221, 221);
+    }
+    
+    .app {
+        margin: 72px 0 20px 0;
+        .qr-app {
+            padding: 12px;
+            border: 1px solid rgb(221, 221, 221);
+            img {
+                width: 100%;
+            }
+        }
+        .store-app {
+            img{
+                margin-bottom: 20px;
+                width: 100%;
+            }
+        }
+    }
+    a:hover {
+        color: $orange;
+        transition: all ease 0.3s;
+    }
+
 }
