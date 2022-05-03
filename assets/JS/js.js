@@ -31,7 +31,7 @@ const bannerImgs = $$('.banner-container img')
 
 const imgControlDot = $$('.img-control__dot')
 
-// function slider() {
+// function popularr() {
 //     setTimeout(() => {
 //         bannerImgs[0].style.left = `-${bannerImgs[0].offsetWidth}px`
 //         bannerImgs[1].style.left = 0
@@ -44,18 +44,18 @@ const imgControlDot = $$('.img-control__dot')
 //         bannerImgs[0].style.left = 0
 //         imgControlDot[0].classList.remove('on')
 //         imgControlDot[1].classList.add('on')
-//             slider()
+//             popularr()
 //         },3000)
 //     }, 3000);
     
 // }
-// slider()
+// popularr()
 
 
 // ------------------carousel-----------------
-const popularContainer = $('.popular-container')
+const popularInner = $('.popular-inner')
 const popularList = $('.popular-list')
-popularContainer.style.height = popularList.offsetHeight + 'px'
+popularInner.style.height = popularList.offsetHeight + 'px'
 
 const imgContainers = $$('.img-container')
 const cmpStyles = window.getComputedStyle(imgContainers[0])
@@ -64,55 +64,121 @@ const paddingImg = parseInt(cmpStyles.getPropertyValue('padding-left'))
 
 // set width cho thẻ con khi dùng thuộc tính position absolute
 imgContainers.forEach(element => {
-    element.style.width = (0.2 * (popularContainer.offsetWidth + 2*paddingImg)) + 'px'
+    element.style.width = (0.2 * (popularInner.offsetWidth + 2*paddingImg)) + 'px'
 });
 
-popularList.addEventListener('mousedown', function (e) {
-    // popularList.style.left = `${e.offsetX}px`
-})
 
  
-// function click trượt slider
-const prevImg = $('.img--prev')
-const nextImg = $('.img--next')
+// function click trượt popularr
+const prevImg1 = $('.popular-container .img--prev')
+const nextImg1 = $('.popular-container .img--next')
 
-const nextSlide = function() {
-    nextImg.removeEventListener('click', nextSlide)
+const nextpopular = function() {
+    nextImg1.removeEventListener('click', nextpopular)
     let overRight = popularList.offsetWidth + (popularList.offsetLeft + paddingImg);
     console.log(overRight)
-    prevImg.classList.remove('visible')
-    if( (overRight-popularContainer.offsetWidth + 2*paddingImg) > imgContainers[0].offsetWidth) {
+    prevImg1.classList.remove('visible')
+    if( (overRight-popularInner.offsetWidth + 2*paddingImg) > imgContainers[0].offsetWidth) {
         
         let move = popularList.offsetLeft + paddingImg
         move += - imgContainers[0].offsetWidth
         popularList.style.left = `${move}px`
 
     } else {
-        nextImg.classList.add('visible')
+        nextImg1.classList.add('visible')
     }
     const timeOutID =setTimeout(() => {
-         nextImg.addEventListener('click', nextSlide)
+         nextImg1.addEventListener('click', nextpopular)
          clearTimeout(timeOutID)    
     }, 300);
 
 }
-nextImg.addEventListener('click', nextSlide)
+nextImg1.addEventListener('click', nextpopular)
 
-const prevSlide = function() {
-    prevImg.removeEventListener('click', prevSlide)
-    nextImg.classList.remove('visible')
+const prevpopular = function() {
+    prevImg1.removeEventListener('click', prevpopular)
+    nextImg1.classList.remove('visible')
     if((popularList.offsetLeft + paddingImg) <0 ) {
         let move = popularList.offsetLeft + paddingImg
         move += imgContainers[0].offsetWidth
         popularList.style.left = `${move}px`
         console.log(popularList.offsetLeft)
     }else {
-        prevImg.classList.add('visible')
+        prevImg1.classList.add('visible')
     }
     const timeOutID =setTimeout(() => {
-        prevImg.addEventListener('click', prevSlide)
+        prevImg1.addEventListener('click', prevpopular)
         clearTimeout(timeOutID)    
    }, 300);
 }
-prevImg.addEventListener('click', prevSlide)
+prevImg1.addEventListener('click', prevpopular)
 
+
+
+const recommendInner = $('.recommend-inner')
+const recommendList = $('.recommend-list')
+// console.log(recommendList.height)
+console.log(recommendInner)
+recommendInner.style.height = recommendList.offsetHeight + 'px'
+
+const imgContainers2 = $$('.recommend-list .img-container')
+const cmpStyles2 = window.getComputedStyle(imgContainers2[0])
+//Lấy style của element
+const paddingImg2 = parseInt(cmpStyles.getPropertyValue('padding-left'))
+
+// set width cho thẻ con khi dùng thuộc tính position absolute
+imgContainers2.forEach(element => {
+    element.style.width = (0.25 * (recommendInner.offsetWidth + 2*paddingImg)) + 'px'
+});
+
+
+
+
+
+
+
+
+ 
+// function click trượt recommendr
+const prevImg2 = $('.recommend-container .img--prev')
+const nextImg2 = $('.recommend-container .img--next')
+
+const nextrecommend = function() {
+    nextImg2.removeEventListener('click', nextrecommend)
+    let overRight = recommendList.offsetWidth + (recommendList.offsetLeft + paddingImg);
+    console.log(overRight)
+    prevImg2.classList.remove('visible')
+    if( (overRight-recommendInner.offsetWidth + 2*paddingImg) > imgContainers2[0].offsetWidth) {
+        
+        let move = recommendList.offsetLeft + paddingImg
+        move += - imgContainers2[0].offsetWidth
+        recommendList.style.left = `${move}px`
+
+    } else {
+        nextImg2.classList.add('visible')
+    }
+    const timeOutID =setTimeout(() => {
+         nextImg2.addEventListener('click', nextrecommend)
+         clearTimeout(timeOutID)    
+    }, 300);
+
+}
+nextImg2.addEventListener('click', nextrecommend)
+
+const prevrecommend = function() {
+    prevImg2.removeEventListener('click', prevrecommend)
+    nextImg2.classList.remove('visible')
+    if((recommendList.offsetLeft + paddingImg) <0 ) {
+        let move = recommendList.offsetLeft + paddingImg
+        move += imgContainers2[0].offsetWidth
+        recommendList.style.left = `${move}px`
+        console.log(recommendList.offsetLeft)
+    }else {
+        prevImg2.classList.add('visible')
+    }
+    const timeOutID =setTimeout(() => {
+        prevImg2.addEventListener('click', prevrecommend)
+        clearTimeout(timeOutID)    
+   }, 300);
+}
+prevImg2.addEventListener('click', prevrecommend)

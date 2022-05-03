@@ -16,3 +16,86 @@
         width: 40%;
     }
 }
+
+.slide-container {
+    position: relative;
+    i {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 50%;
+        position: absolute;
+        z-index: 1;
+        font-size: 2.4rem;
+        justify-content: center;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        top: 50%;
+        overflow: unset;
+        &:hover {
+            color: $orange;
+            cursor: pointer;
+            transition: all ease 0.3s;
+        }
+    }
+
+    .img--prev{
+        left: 0;
+        transform: translateX(-50%) translateY(-50%);
+    }
+    .visible {
+        color: $lightDark;
+        background-color: rgba(255, 255, 255, 0.5);
+        &:hover {
+            color: $lightDark;
+        }
+    }
+    .img--next {
+        right: 0;
+        transform: translateX(50%) translateY(-50%);
+    }
+    .slide-inner {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        .slide-list {
+            transition: all ease-in-out 0.3s; 
+            position: absolute;
+            display: flex;
+            margin: 0 -8px;
+            // height: 300px;
+            left: 0;
+            .img-container {  
+                // pointer-events: none;
+                padding: 0 8px;
+                // width: 20%;   
+                position: relative;
+                background-color: $white;
+                .img {
+                    border-radius:10px;
+                    overflow: hidden;
+                    display: block;
+                    // height: 100%;
+    
+                }
+                .img-des {
+                    position: absolute;
+                    bottom: 20px;
+                    right: 50%;
+                    color: $white;
+                    h2 {
+                        color: $white;
+                        margin-bottom: 8px;
+                    }
+                }
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    // height: 310px;
+                }
+            }
+        }
+    }
+}

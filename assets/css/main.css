@@ -50,36 +50,6 @@ body {
     opacity: 1;
   }
 }
-@keyframes fadeInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
-@keyframes fadeInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(100%);
-  }
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
-@keyframes bounceInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
 .visible {
   opacity: 1 !important;
   visibility: visible !important;
@@ -116,6 +86,82 @@ body {
 }
 .row .col-12-5_2 {
   width: 40%;
+}
+
+.slide-container {
+  position: relative;
+}
+.slide-container i {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  font-size: 2.4rem;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  top: 50%;
+  overflow: unset;
+}
+.slide-container i:hover {
+  color: #F65E39;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+.slide-container .img--prev {
+  left: 0;
+  transform: translateX(-50%) translateY(-50%);
+}
+.slide-container .visible {
+  color: #555555;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.slide-container .visible:hover {
+  color: #555555;
+}
+.slide-container .img--next {
+  right: 0;
+  transform: translateX(50%) translateY(-50%);
+}
+.slide-container .slide-inner {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.slide-container .slide-inner .slide-list {
+  transition: all ease-in-out 0.3s;
+  position: absolute;
+  display: flex;
+  margin: 0 -8px;
+  left: 0;
+}
+.slide-container .slide-inner .slide-list .img-container {
+  padding: 0 8px;
+  position: relative;
+  background-color: #fff;
+}
+.slide-container .slide-inner .slide-list .img-container .img {
+  border-radius: 10px;
+  overflow: hidden;
+  display: block;
+}
+.slide-container .slide-inner .slide-list .img-container .img-des {
+  position: absolute;
+  bottom: 20px;
+  right: 50%;
+  color: #fff;
+}
+.slide-container .slide-inner .slide-list .img-container .img-des h2 {
+  color: #fff;
+  margin-bottom: 8px;
+}
+.slide-container .slide-inner .slide-list .img-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .header {
@@ -382,84 +428,6 @@ body {
 .popular {
   padding: 20px 0 0 0;
 }
-.popular .slide-container {
-  position: relative;
-}
-.popular .slide-container i {
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 50%;
-  position: absolute;
-  z-index: 1;
-  font-size: 2.4rem;
-  justify-content: center;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  top: 50%;
-  overflow: unset;
-}
-.popular .slide-container i:hover {
-  color: #F65E39;
-  cursor: pointer;
-  transition: all ease 0.3s;
-}
-.popular .slide-container .img--prev {
-  left: 0;
-  transform: translateX(-50%) translateY(-50%);
-}
-.popular .slide-container .visible {
-  color: #555555;
-  background-color: rgba(255, 255, 255, 0.5);
-}
-.popular .slide-container .visible:hover {
-  color: #555555;
-}
-.popular .slide-container .img--next {
-  right: 0;
-  transform: translateX(50%) translateY(-50%);
-}
-.popular .slide-container .popular-container {
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-}
-.popular .slide-container .popular-container .popular-list {
-  transition: all ease-in-out 0.3s;
-  position: absolute;
-  display: flex;
-  margin: 0 -8px;
-  height: 300px;
-  left: 0;
-}
-.popular .slide-container .popular-container .popular-list .img-container {
-  pointer-events: none;
-  padding: 0 8px;
-  position: relative;
-  background-color: #fff;
-}
-.popular .slide-container .popular-container .popular-list .img-container .img {
-  border-radius: 10px;
-  overflow: hidden;
-  display: block;
-  height: 100%;
-}
-.popular .slide-container .popular-container .popular-list .img-container .img-des {
-  position: absolute;
-  bottom: 20px;
-  right: 50%;
-  color: #fff;
-}
-.popular .slide-container .popular-container .popular-list .img-container .img-des h2 {
-  color: #fff;
-  margin-bottom: 8px;
-}
-.popular .slide-container .popular-container .popular-list .img-container img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
 
 .promotion {
   padding: 20px 0 0 0;
@@ -469,6 +437,9 @@ body {
   border-radius: 10px;
 }
 
+.manual {
+  padding: 20px 0 0 0;
+}
 .manual a img {
   width: 100%;
   border-radius: 10px;
@@ -573,6 +544,35 @@ body {
 .footer a:hover {
   color: #F65E39;
   transition: all ease 0.3s;
+}
+
+.recommend {
+  padding: 20px 0 0 0;
+}
+.recommend .recommend-container {
+  margin: 20px 0;
+}
+.recommend .recommend-container .recommend-list {
+  height: 300px;
+}
+.recommend .recommend-container .recommend-list .img-container .img-content p:first-child {
+  color: #555555;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.recommend .recommend-container .recommend-list .img-container .img-content p {
+  color: #222222;
+}
+.recommend .recommend-container .recommend-list .img-container .img {
+  border-radius: 5px !important;
+}
+
+.popular .popular-list {
+  height: 300px;
+}
+.popular .popular-list .img-container .img {
+  height: 100%;
 }
 
 /*# sourceMappingURL=main.css.map */
