@@ -76,28 +76,43 @@ popularList.addEventListener('mousedown', function (e) {
 const prevImg = $('.img--prev')
 const nextImg = $('.img--next')
 
-
-
-
-nextImg.onclick = function() {
+const nextSlide = function() {
+    nextImg.removeEventListener('click', nextSlide)
     let overRight = popularList.offsetWidth + (popularList.offsetLeft + paddingImg);
     console.log(overRight)
+    prevImg.classList.remove('visible')
     if( (overRight-popularContainer.offsetWidth + 2*paddingImg) > imgContainers[0].offsetWidth) {
         
         let move = popularList.offsetLeft + paddingImg
         move += - imgContainers[0].offsetWidth
         popularList.style.left = `${move}px`
 
+    } else {
+        nextImg.classList.add('visible')
     }
+    const timeOutID =setTimeout(() => {
+         nextImg.addEventListener('click', nextSlide)
+         clearTimeout(timeOutID)    
+    }, 300);
 
 }
+nextImg.addEventListener('click', nextSlide)
 
-prevImg.onclick = function() {
+const prevSlide = function() {
+    prevImg.removeEventListener('click', prevSlide)
+    nextImg.classList.remove('visible')
     if((popularList.offsetLeft + paddingImg) <0 ) {
         let move = popularList.offsetLeft + paddingImg
         move += imgContainers[0].offsetWidth
         popularList.style.left = `${move}px`
         console.log(popularList.offsetLeft)
+    }else {
+        prevImg.classList.add('visible')
     }
+    const timeOutID =setTimeout(() => {
+        prevImg.addEventListener('click', prevSlide)
+        clearTimeout(timeOutID)    
+   }, 300);
 }
+prevImg.addEventListener('click', prevSlide)
 

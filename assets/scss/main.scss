@@ -303,15 +303,27 @@
             border: 1px solid rgba(0, 0, 0, 0.1);
             top: 50%;
             overflow: unset;
+            &:hover {
+                color: $orange;
+                cursor: pointer;
+                transition: all ease 0.3s;
+            }
         }
+
         .img--prev{
             left: 0;
             transform: translateX(-50%) translateY(-50%);
         }
+        .visible {
+            color: $lightDark;
+            background-color: rgba(255, 255, 255, 0.5);
+            &:hover {
+                color: $lightDark;
+            }
+        }
         .img--next {
             right: 0;
             transform: translateX(50%) translateY(-50%);
-
         }
         .popular-container {
             width: 100%;
@@ -338,11 +350,12 @@
         
                     }
                     .img-des {
-                        color: $white;
                         position: absolute;
                         bottom: 20px;
                         right: 50%;
-                        h1 {
+                        color: $white;
+                        h2 {
+                            color: $white;
                             margin-bottom: 8px;
                         }
                     }

@@ -400,9 +400,21 @@ body {
   top: 50%;
   overflow: unset;
 }
+.popular .slide-container i:hover {
+  color: #F65E39;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
 .popular .slide-container .img--prev {
   left: 0;
   transform: translateX(-50%) translateY(-50%);
+}
+.popular .slide-container .visible {
+  color: #555555;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.popular .slide-container .visible:hover {
+  color: #555555;
 }
 .popular .slide-container .img--next {
   right: 0;
@@ -434,12 +446,13 @@ body {
   height: 100%;
 }
 .popular .slide-container .popular-container .popular-list .img-container .img-des {
-  color: #fff;
   position: absolute;
   bottom: 20px;
   right: 50%;
+  color: #fff;
 }
-.popular .slide-container .popular-container .popular-list .img-container .img-des h1 {
+.popular .slide-container .popular-container .popular-list .img-container .img-des h2 {
+  color: #fff;
   margin-bottom: 8px;
 }
 .popular .slide-container .popular-container .popular-list .img-container img {
