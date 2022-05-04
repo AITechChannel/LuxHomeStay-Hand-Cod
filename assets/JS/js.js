@@ -1,7 +1,10 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
-let subMenu = $('.header .sub-item')
-let language = $('.header .language')
+
+// ------------language dropdown --------------------
+
+const subMenu = $('.header .sub-item')
+const language = $('.header .language')
 
 subMenu.onclick = function() {
     language.classList.toggle('visible')
@@ -12,6 +15,7 @@ window.onclick=function(e) {
     }
 }
 
+// ---------------search dropdown ---------------
 
 const searchCustomer = $('.header .search__customer')
 const subCustomer = $('.header .sub-customer')
@@ -21,35 +25,85 @@ searchCustomer.onclick = function() {
 }
 
 
-
+// ----------------auto slide banner-------------------------
 const bannerContainer = $('.banner-container')
-// console.log(bannerContainer.offsetWidth)
 const bannerImgs = $$('.banner-container img')
-
-    bannerImgs[0].style.width = bannerContainer.offsetWidth + 'px'
-    bannerContainer.style.height = bannerImgs[0].offsetHeight + 'px'
-
 const imgControlDot = $$('.img-control__dot')
 
-// function popularr() {
-//     setTimeout(() => {
-//         bannerImgs[0].style.left = `-${bannerImgs[0].offsetWidth}px`
-//         bannerImgs[1].style.left = 0
-//         imgControlDot[1].classList.remove('on')
-//         imgControlDot[0].classList.add('on')
-//         console.log(1)
+bannerImgs[0].style.width = bannerContainer.offsetWidth + 'px'
+bannerContainer.style.height = bannerImgs[0].offsetHeight + 'px'
 
-//         setTimeout(() => {
-//         bannerImgs[1].style.left = `${bannerImgs[1].offsetWidth}px`
-//         bannerImgs[0].style.left = 0
-//         imgControlDot[0].classList.remove('on')
-//         imgControlDot[1].classList.add('on')
-//             popularr()
-//         },3000)
-//     }, 3000);
+function autoFwdSlider() {
+    let i =0;
+
+    bannerImgs.forEach((img) => {
+        img.style.left = `${img.offsetWidth}px`
+
+    })
+
+    bannerImgs[i].style.left = 0;
+    const id = setInterval(() => {                 
+        i+=1;       
+        if(i > 2) {
+            autoRevSlider()
+            clearInterval(id)
+        }
+        console.log(i)
+        bannerImgs[i].style.left = 0;
+        imgControlDot[i].classList.add('on')
+        imgControlDot[i-1].classList.remove('on')
+
+        bannerImgs[i-1].style.left = '-1304px'
+    }, 2000);
+   
+}
+autoFwdSlider()
+
+function autoRevSlider() {
+    let i = bannerImgs.length;
+
+    const id2 = setInterval(() => {                 
+        i= i-1;
+        
+        console.log(i)
+        bannerImgs[i].style.left = '1304px';
+
+        bannerImgs[i-1].style.left = 0;
+
+        imgControlDot[i].classList.remove('on')
+        imgControlDot[i-1].classList.add('on')
+        if(i < 2) {
+            autoFwdSlider()
+            clearInterval(id2)
+        }
+    }, 2000);
     
+}
+
+
+
+
+
+
+// function slideVisible() {
+//     console.log('start2')
+//     bannerImgs[1].style.left = `${bannerImgs[1].offsetWidth}px`
+//     bannerImgs[0].style.left = 0
+//     imgControlDot[0].classList.remove('on')
+//     imgControlDot[1].classList.add('on')
+//     set()
 // }
-// popularr()
+// // function autoSlider() {
+// //     // setTimeout(() => {
+// //         console.log('start')
+// //         bannerImgs[0].style.left = `-${bannerImgs[0].offsetWidth}px`
+// //         bannerImgs[1].style.left = 0
+// //         imgControlDot[1].classList.remove('on')
+// //         imgControlDot[0].classList.add('on')
+
+// //     // }, 3000);  
+// // }
+// // autoSlider()
 
 
 // ------------------carousel-----------------
