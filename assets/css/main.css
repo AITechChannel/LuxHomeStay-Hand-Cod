@@ -23,6 +23,9 @@
   font-size: 1.5rem;
   line-height: 25px;
 }
+* a {
+  cursor: pointer;
+}
 
 html {
   font-size: 1.6rem;
@@ -73,6 +76,11 @@ body {
   cursor: pointer;
 }
 
+@media (max-width: 992px) {
+  .row .col-12-4 {
+    width: 30.333% !important;
+  }
+}
 .title h2 {
   margin: 10px 0;
 }
@@ -275,7 +283,7 @@ body {
   justify-content: center;
   margin-right: 0;
 }
-.header .search-container .search__customer .sub-customer .customer-container h6 {
+.header .search-container .search__customer .sub-customer .customer-container h4 {
   margin-right: 90px;
   color: #222222;
   font-weight: 500;
@@ -573,6 +581,45 @@ body {
 }
 .popular .popular-list .img-container .img {
   height: 100%;
+}
+
+.discover .discover-list {
+  height: 264px;
+}
+.discover .discover-list .img-container .img-link {
+  height: 100%;
+  display: block;
+}
+.discover .discover-list .img-container .img {
+  height: 100%;
+}
+.discover .discover-list .img-container .img img {
+  -webkit-filter: blur(1.5px);
+  /* Safari 6.0 - 9.0 */
+  filter: blur(1.5px);
+  object-fit: cover;
+}
+.discover .discover-list .img-container .img-des {
+  transform: translateX(50%);
+  text-align: left;
+  font-weight: 900;
+  width: 100%;
+  padding: 0 40px;
+  top: 70%;
+}
+.discover .discover-list .img-container .img-location {
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #fff;
+  background-color: #898989;
+  padding: 4px 20px;
+  border-radius: 20px;
+}
+.discover .discover-list .img-container .img-location:hover {
+  background-color: #555555;
 }
 
 /*# sourceMappingURL=main.css.map */

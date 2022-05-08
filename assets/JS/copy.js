@@ -1,59 +1,59 @@
-const recommendInner = $('.recommend-inner')
-const recommendList = $('.recommend-list')
-recommendInner.style.height = recommendList.offsetHeight + 'px'
+const discoverInner = $('.discover-inner')
+const discoverList = $('.discover-list')
+discoverInner.style.height = discoverList.offsetHeight + 'px'
 
-const imgContainers = $$('.img-container')
-const cmpStyles = window.getComputedStyle(imgContainers[0])
+const imgContainers3 = $$('.discover .img-container')
+const cmpStyles3 = window.getComputedStyle(imgContainers3[0])
 //Lấy style của element
-const paddingImg = parseInt(cmpStyles.getPropertyValue('padding-left'))
+const paddingImg = parseInt(cmpStyles3.getPropertyValue('padding-left'))
 
 // set width cho thẻ con khi dùng thuộc tính position absolute
-imgContainers.forEach(element => {
-    element.style.width = (0.2 * (recommendInner.offsetWidth + 2*paddingImg)) + 'px'
+imgContainers3.forEach(element => {
+    element.style.width = (0.33333 * (discoverInner.offsetWidth + 2*paddingImg)) + 'px'
 });
 
 
  
-// function click trượt recommendr
-const prevImg2 = $('.recommend-container .img--prev')
-const nextImg2 = $('.recommend-container .img--next')
+// --------------------function click trượt discover--------------------
+const prevImg3 = $('.discover-container .img--prev')
+const nextImg3 = $('.discover-container .img--next')
 
-const nextrecommend = function() {
-    nextImg2.removeEventListener('click', nextrecommend)
-    let overRight = recommendList.offsetWidth + (recommendList.offsetLeft + paddingImg);
+const nextdiscover = function() {
+    nextImg3.removeEventListener('click', nextdiscover)
+    let overRight = discoverList.offsetWidth + (discoverList.offsetLeft + paddingImg);
     console.log(overRight)
-    prevImg2.classList.remove('visible')
-    if( (overRight-recommendInner.offsetWidth + 2*paddingImg) > imgContainers[0].offsetWidth) {
+    prevImg3.classList.remove('visible')
+    if( (overRight-discoverInner.offsetWidth + 2*paddingImg) > imgContainers3[0].offsetWidth) {
         
-        let move = recommendList.offsetLeft + paddingImg
-        move += - imgContainers[0].offsetWidth
-        recommendList.style.left = `${move}px`
+        let move = discoverList.offsetLeft + paddingImg
+        move += - imgContainers3[0].offsetWidth
+        discoverList.style.left = `${move}px`
 
     } else {
-        nextImg2.classList.add('visible')
+        nextImg3.classList.add('visible')
     }
     const timeOutID =setTimeout(() => {
-         nextImg2.addEventListener('click', nextrecommend)
+         nextImg3.addEventListener('click', nextdiscover)
          clearTimeout(timeOutID)    
     }, 300);
 
 }
-nextImg2.addEventListener('click', nextrecommend)
+nextImg3.addEventListener('click', nextdiscover)
 
-const prevrecommend = function() {
-    prevImg2.removeEventListener('click', prevrecommend)
-    nextImg2.classList.remove('visible')
-    if((recommendList.offsetLeft + paddingImg) <0 ) {
-        let move = recommendList.offsetLeft + paddingImg
-        move += imgContainers[0].offsetWidth
-        recommendList.style.left = `${move}px`
-        console.log(recommendList.offsetLeft)
+const prevdiscover = function() {
+    prevImg3.removeEventListener('click', prevdiscover)
+    nextImg3.classList.remove('visible')
+    if((discoverList.offsetLeft + paddingImg) <0 ) {
+        let move = discoverList.offsetLeft + paddingImg
+        move += imgContainers3[0].offsetWidth
+        discoverList.style.left = `${move}px`
+        console.log(discoverList.offsetLeft)
     }else {
-        prevImg2.classList.add('visible')
+        prevImg3.classList.add('visible')
     }
     const timeOutID =setTimeout(() => {
-        prevImg2.addEventListener('click', prevrecommend)
+        prevImg3.addEventListener('click', prevdiscover)
         clearTimeout(timeOutID)    
    }, 300);
 }
-prevImg2.addEventListener('click', prevrecommend)
+prevImg3.addEventListener('click', prevdiscover)
